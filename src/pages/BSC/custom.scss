@@ -4,6 +4,7 @@
   }
 body{
     background: #343135 !important;
+    overflow-x: hidden;
 }
 .wallet-input{
     border: 2px solid #84570C;
@@ -70,6 +71,10 @@ body{
   .wallet-info-2{
       .list-key{
           color: #B77F19;
+          .bullet-arr{
+            color: #84570C;
+            padding-right: 5px;
+          }
       }
       .list-key-date{
         color: #84570C;
@@ -98,9 +103,10 @@ body{
       max-width: 100%;
       display: flex;
       justify-content: center;
-      background: #424242;
+      background: #27262C;
       margin: 10px;
       border-radius: 10px;
+      padding:20px 10px;
   }
 
   footer{
@@ -108,5 +114,15 @@ body{
       padding:20px;
       color: #fff;
       text-align: center;
-      margin-top: 15px;
+      margin-top: 25px;
+  }
+  .bullet-arr{
+      color: #B77F19;
+  }
+
+  .full-form{
+      color: rgba(132, 87, 12, 0.7);
+      margin-left: 25px;
+      margin-bottom: 15px;
+      font-weight: lighter;
   }

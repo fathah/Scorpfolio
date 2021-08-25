@@ -13,8 +13,7 @@ import defaultAddress from '../../utils/sources/pancakeswap7.json'
 import noimg from '../../assets/images/noimage.png'
 import highcharts3d from 'highcharts/highcharts-3d'
 
-import WalletDetails from '../../components/WalletDetails'
-import TokenLists from '../../components/TokenList'
+import Chart from '../../components/Charts';
 
 // Import Highcharts
 import Highcharts, { chart } from 'highcharts/highstock';
@@ -24,8 +23,9 @@ import Highcharts, { chart } from 'highcharts/highstock';
 // import pancakePair from "../../utils/sources/pancakepair.json";
 // import { Button } from 'bootstrap';
 import logo from '../../assets/images/Ragnify.png'
-import { createMuiTheme } from '@material-ui/core';
-
+import { createTheme } from '@material-ui/core/styles'
+import MUIDataTable from "mui-datatables";
+import { MuiThemeProvider } from '@material-ui/core';
 // import { IconButton } from "@material-ui/core";
 // import { Edit } from "@material-ui/icons";
 // Load Highcharts modules
@@ -170,7 +170,7 @@ export default function BSCPage(props) {
         { star: 0, img: noimg, name: "Bob Herm", Price: "Test Corp", Holdings: "Tampa", Value: "FL" },
         { star: 0, img: noimg, name: "James Houston", Price: "Test Corp", Holdings: "Dallas", Value: "TX" },
     ];
-    const muitheme = createMuiTheme({
+    const muitheme = createTheme({
         palette: { type: 'dark' },
         typography: { useNextVariants: true },
     });
@@ -778,31 +778,9 @@ export default function BSCPage(props) {
             return 'no';
         }
     }
-
-const walletData = {
-date:date,
-walletValue:walletValue,
-deadtokenCount:deadtokenCount,
-wfTransaction:wfTransaction,
-earnFlection:earnFlection,
-totalInvest:totalInvest,
-totalPayout:totalPayout,
-};
-
-const tokenListData = {
-    detailToken:detailToken,
-    muitheme:muitheme,
-    bnbPrice:bnbPrice,
-    datatable:datatable,
-    columns:columns,
-    options:options,
-    showtokenFlag:showtokenFlag,
-
-
-};
     return (
         <ThemeContext.Consumer>
-            {({ theme, changeThemeMode }) => (
+            {({ theme }) => (
                 <div id="homepage" className={theme} style={{ width: '100vw', height: '100vh', }}>
                     <div className="row" style={{    position: 'relative'}}>
                     <div class="logo-bg"></div>
@@ -858,21 +836,282 @@ const tokenListData = {
                             </span> : <></>
                         }</section>
                         {
-                            isLoading ? <div id="spinner" className="row justify-content-center align-items-center pt-5" style={{ minHeight: '40vh' }}>
-                                <div class="hm-spinner" ></div>
+                            isLoading ? <div id="spinner" className="row justify-content-center align-items-center pt-5" 
+                            style={{ minHeight: '40vh' }}>
+                            <div class="hm-spinner" ></div>
                             </div> : <></>
                         }
-                        <WalletDetails tokenAry={tokenAry} theme={theme} optionValue={optionValue} Highcharts={Highcharts}
-                        walletData={walletData}
-                        />
-                       
-                       <TokenLists 
-                       walletToken={walletToken} 
-                       starredToken={starredToken} 
-                       showDeadtok={showDeadtok} 
-                       tokenAry={tokenAry}
-                       data={tokenListData} />
+                        <br />
+                        {
+                            tokenAry.length > 0 ?
+                                <div className="row">
+                                    <div className="row">
+                                        <div className="col-5 wallet-box ">
+                                            <div id={theme} className="d-flex row-5  wallet-info-2">
+                                                <div className="d-flex row wallet-background">
+                                                <h3>Wallet Details</h3>
+                                                    <div className="data col-7 leftTotal" >
+                                                        
+                                                        <div class="data-row">
+                                                            <span className="p-1 list-key"><span className="bullet-arr">&#8651;</span>{"Wallet value"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span  className="p-1 list-key"><span className="bullet-arr">&#8651;</span>{"Number of assets "}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span className="p-1 list-key"><span className="bullet-arr">&#8651;</span>{"Dead tokens"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span  className="p-1 list-key"><span className="bullet-arr">&#8651;</span>{"Wallet value from Tr."}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span className="p-1 list-key"><span className="bullet-arr">&#8651;</span>{"Earnings from Ref."}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span  className="p-1 list-key"><span className="bullet-arr">&#8651;</span>{"Total invested"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span className="p-1 list-key"><span className="bullet-arr">&#8651;</span>{"Total payed out"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span  className="p-1 list-key"><span className="bullet-arr">&#8651;</span>{"Wallet result"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span className="p-1 list-key-date"> {date} </span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="data col-5 rightTotal" >
+                                                        <div class="data-row">
+                                                            <span className="p-1">{eval(walletValue) + "$"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span  className="p-1">{tokenAry.length - deadtokenCount}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span className="p-1">{deadtokenCount}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span  className="p-1">{eval((wfTransaction).toFixed(4)) + "$"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span className="p-1">{earnFlection + "$"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span  className="p-1">{totalInvest + "$"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span className="p-1">{totalPayout + "$"}</span>
+                                                        </div>
+                                                        <div class="data-row">
+                                                            <span  className="p-1">{eval((walletValue + totalPayout - totalInvest).toFixed(4)) + "$"}</span>
+                                                        </div>
+                                                    </div>
+                                                    <section className="full-form">
+                                                        <small>
+                                                        Tr: Transactions <br />
+                                                        Ref: Reflection
+                                                        </small>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div className="row-7">
+                                            </div>
+                                        </div>
+                                        <div className="col-6 chartTotal">
+                                            <Chart options={optionValue} highcharts={Highcharts} />
+                                        </div>
+                                    </div>
+                                </div> : <></>
+                        }
+                       <br />
+                      
+      {tokenAry.length > 0 && (
+ <section className="token-list-section">
+        <div className="row tokenShow">
+          <div className="col-8">
+            <div className="d-flex row-1 accordn-button">
+              <div class="btn-group col-9">
+                <button
+                  onClick={() => walletToken()}
+                  type="button"
+                  className="token-show  btn-primary"
+                >
+                  All Token
+                </button>
+                <button
+                  onClick={() => starredToken()}
+                  type="button"
+                  className="token-show  btn-primary"
+                >
+                  Selected Token
+                </button>
+                <button
+                  onClick={() => showDeadtok()}
+                  type="button"
+                  className="token-show  btn-primary"
+                >
+                  Dead Token
+                </button>
+              </div>
+            </div>
+            <div className="row-8">
+              <MuiThemeProvider theme={muitheme}>
+                <MUIDataTable
+                  title={"BNB/" + bnbPrice}
+                  data={datatable}
+                  columns={columns}
+                  options={options}
+                />
+              </MuiThemeProvider>
+            </div>
+          </div> 
+          <div className="col-4 detail-token">
+            {showtokenFlag ? (
+              <div className="row showdetail-block">
+                <div className="row detailbackground">
+                  <span className="p-1 tokenTitle">
+                    {detailToken.name +
+                      eval(
+                        (detailToken.price * detailToken.balance).toFixed(4)
+                      ) +
+                      "$"}
+                  </span>
+                  <div className="data col-6 leftInside">
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Value of asset "}</span>
                     </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Price"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Current amount"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Transactions in"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Transactions out"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Reflection gain"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Value Without Ref."}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Value from Ref."}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Invested"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"PayedOut"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Result"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1"><span className="bullet-arr">&#8651;</span> {"Liquid pools:"}</span>
+                    </div>
+                  </div>
+                  <div className="data col-6 rightInside">
+                    <div class="data-row">
+                      <span className="p-1">
+                        {eval(
+                          (detailToken.price * detailToken.balance).toFixed(4)
+                        ) + "$"}
+                      </span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1">{(detailToken.price).toFixed(12) + "$"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1">{detailToken.balance}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1">{detailToken.amountIn}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1">{detailToken.amountOut}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1">{detailToken.rflectGain}</span>
+                    </div>
+                    {detailToken.rflectGain < detailToken.balance ? (
+                      <div class="data-row">
+                        <span className="p-1">
+                          {eval(
+                            (
+                              detailToken.price * detailToken.balance -
+                              detailToken.rflectGain * detailToken.price
+                            ).toFixed(4)
+                          ) + "$"}
+                        </span>
+                      </div>
+                    ) : (
+                      <div class="data-row">
+                        <span className="p-1">
+                          {eval(
+                            (detailToken.price * detailToken.balance).toFixed(4)
+                          ) + "$"}
+                        </span>
+                      </div>
+                    )}
+                    {detailToken.rflectGain < detailToken.balance ? (
+                      <div class="data-row">
+                        <span className="p-1">
+                          {eval(
+                            (
+                              detailToken.rflectGain * detailToken.price
+                            ).toFixed(4)
+                          ) + "$"}
+                        </span>
+                      </div>
+                    ) : (
+                      <div class="data-row">
+                        <span className="p-1">{"0$"}</span>
+                      </div>
+                    )}
+                    <div class="data-row">
+                      <span className="p-1">{detailToken.invest + "$"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1">{detailToken.payout + "$"}</span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1">
+                        {eval(
+                          (
+                            detailToken.payout +
+                            detailToken.price * detailToken.balance -
+                            detailToken.invest
+                          ).toFixed(4)
+                        ) + "$"}
+                      </span>
+                    </div>
+                    <div class="data-row">
+                      <span className="p-1">{"V2"}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
+          </div>
+        </div>
+        </section>
+      )}
+    
+   
+                    </div>
+                    {
+       tokenAry.length>0?(
+        <footer>
+        Scorpion Finance { new Date().getFullYear() }
+    </footer>
+       ):(<></>)
+   }
                 </div >
             )
             }
