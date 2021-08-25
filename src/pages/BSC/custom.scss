@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+*{
+    font-family: 'Montserrat', sans-serif !important;
+  }
+body{
+    background: #343135 !important;
+}
+.wallet-input{
+    border: 2px solid #84570C;
+    min-height: 50px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    &:focus{
+        color: #fff;
+    }
+
+}
+
+.main-search-section{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    .button-group{
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center;
+        button{
+            margin: 0px 4px;
+            min-height: 45px;
+        }
+    }
+    .address-drop-down{
+        width:100%;
+        border: 2px solid #84570C;
+        min-height: 50px;
+        outline: none;
+        border-radius:5px;
+        color: rgba(255, 255, 255, 0.7);
+    &:focus{
+        color: #fff;
+    }
+       
+    }
+}
+
+.logo-bg{
+    background-color:#27262C;
+    height:70px;
+    position: absolute;
+    top:0;
+    z-index: -100;
+}
+
+.scorp-btn{
+    background: linear-gradient(to right, #F1B729 0%, #B77F19 50%,#84570C 100%);
+    transition: all 0.5s ease-in-out;
+    border: none;
+    color: #fff;
+    &:hover{
+        background: linear-gradient(to right, #84570C  0%, #B77F19 50%,#F1B729 100%);
+        color: #fff;
+    }
+    
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255, 255, 255,0.6) !important;
+  }
+
+  .wallet-info-2{
+      .list-key{
+          color: #B77F19;
+      }
+      .list-key-date{
+        color: #84570C;
+    }
+    h3{
+        margin: 0px 20px;
+        margin-top: 20px;
+
+    }
+  }
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+}
+  .asset-processing{
+      padding: 6px 10px;
+      color: #fff;
+      border-radius: 5px;
+      background-color: #84570C;
+      text-align: center;
+
+  }
+  .token-list-section{
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      background: #424242;
+      margin: 10px;
+      border-radius: 10px;
+  }
+
+  footer{
+      background: #27262C;
+      padding:20px;
+      color: #fff;
+      text-align: center;
+      margin-top: 15px;
+  }

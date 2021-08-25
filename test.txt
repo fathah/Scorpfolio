@@ -1,0 +1,5 @@
+1) should show all the token which is in thier  wallet till date. 
+
+2) should show all the value of tokens. And calculate all the tokens value and show that as wallet value
+
+3) show each token details like value, reflection current price, profits, loss. 

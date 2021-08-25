@@ -1,0 +1,68 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "./colors";
+@import "./functions";
+
+body.light {
+    background-color: color(containerLight);
+    // background-color: linear-gradient(to left, #1b1464 0%, #00fefe 100%);
+    color: color(textLight);
+}
+body.dark {
+    background-color: color(containerDark);
+    color: color(textDark);
+}
+.container.light {
+    background-color: color(containerLight);
+}
+.container.dark {
+    background-color: color(containerDark);
+}
+
+.nav.light {
+    background: color(navLight);
+}
+.nav.dark {
+    background: color(navDark);
+}
+.navbar {
+    padding: 0 !important;
+}
+
+.card.light {
+    background-color: color(cardLight);
+}
+.card.dark {
+    background-color: color(cardDark);
+}
+
+.icon.light {
+    color: color(iconLight);
+}
+.icon.dark {
+    color: color(iconDark);
+}
+
+.form-control {
+    background: transparent;
+}
+.form-control:focus {
+    background: transparent;
+}
+
+.search-icon {
+    top: 10px;
+    position: relative;
+    left: 25px;
+    color: color(mainColor);
+}
+.search-input {
+    padding-left: 30px;
+}
+
+.test {
+    background: linear-gradient(to bottom right, #00fefe 0%, #1b1464 100%);
+    width: 100vw;
+    height: 100vh;
+}

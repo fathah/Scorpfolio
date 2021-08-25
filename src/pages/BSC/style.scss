@@ -1,0 +1,595 @@
+@import "../../assets/scss/colors.scss";
+@import "../../assets/scss/functions.scss";
+
+
+
+.bNeaU {
+    filter: blur(6px);
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, rgba(221, 70, 70, 0.616) 0%, rgba(64, 62, 204, 0.404) 10%, rgba(203, 211, 87, 0.644) 20%, rgba(79, 220, 74, 0.623) 30%, rgb(63, 218, 216) 40%, rgb(47, 201, 226) 50%, rgb(28, 127, 238) 60%, rgb(95, 21, 242) 70%, rgb(186, 12, 248) 80%, rgb(251, 7, 217) 90%, rgb(255, 0, 0) 100%) 0% 0% / 300% 300%;
+    animation: 2s linear 0s infinite normal none running ilqnTz;
+    border-radius: 16px;
+}
+#homepage {
+    color: #ffffff;
+    font-weight: bold;
+    .back-brand {
+        background: linear-gradient(to left, #1b1464 0%, #00fefe 100%);
+        height: 300px;
+    }
+    .head {
+        border: 1px solid #8278788a;
+        background-color: #8278788a;
+        border-radius: 10px;
+    }
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 250px;
+        left: calc(50% - 120px);
+    }
+    .img-wrap {
+        position: relative;
+        background: color(gradientColor);
+        padding: 15px;
+        border-radius: 100%;
+        width: 280px;
+        height: 280px;
+    }
+    .profile-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+    }
+    .profile {
+        .name {
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .address {
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+    .options {
+        margin-top: 240px;
+        .items {
+            padding-right: 10%;
+        }
+        // img {
+        //     // width: 200px;
+        //     // height: 35px;
+        // }
+        .col {
+            padding: 0;
+        }
+    }
+    .main-content {
+        .icons {
+            position: absolute;
+            right: 0;
+            padding: 10px;
+        }
+    }
+    // .outLine {
+    // }
+    .accordion {
+        color: color(mainColor);
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        .card {
+            background: transparent;
+            border-color: color(mainColor);
+            border: 0px solid #01d2f0;
+        }
+        .card-header {
+            background: transparent;
+            padding: 1px;
+        }
+
+        .accordion-toggle {
+            justify-content: space-between;
+            align-items: center;
+        }
+        i {
+            font-size: 24px;
+        }
+        .favour {
+            padding: 10px;
+            // padding-left: 50px;
+        }
+        .favourite {
+            width: 40%;
+        }
+        .rightToggle {
+            width: 7%;
+        }
+        // .outLine {
+        //     border: 0.5px solid #01d2f0;
+        // }
+        .icon-wrap {
+            width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            #logo {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .icon-img {
+            font-size: 28px;
+        }
+        .card-body {
+            font-size: 16px;
+        }
+    }
+
+    .right-content {
+        padding: 0 30px;
+        .input-area {
+            margin-top: 20px;
+            input {
+                color: #0e0e0e;
+                border-color: #1a35f3;
+            }
+            ::placeholder {
+                color: color(mainColor);
+            }
+            select {
+                appearance: auto;
+                color: #000000;
+                border-color: #0e14cc;
+            }
+        }
+    }
+}
+.btn-primary {
+    color: #fff;
+    background-color: #424242;
+    border-color: #424242;
+}
+.leftTotal {
+    padding: 35px;
+    font-size: 15px;
+    font-weight: normal;
+}
+.rightTotal {
+    padding: 35px;
+    font-size: 15px;
+    font-weight: normal;
+}
+.leftInside {
+    padding: 35px;
+    font-size: 15px;
+    font-weight: normal;
+}
+.rightInside {
+    padding: 35px;
+    font-size: 15px;
+    font-weight: normal;
+}
+.highcharts-background {
+    fill: transparent;
+}
+.highcharts-title {
+    display: none;
+}
+.highcharts-subtitle {
+    display: none;
+}
+.highcharts-credits {
+    display: none;
+}
+
+#dark.accordion-block {
+    border: 2px solid #ff3333;
+    background-color: #344b418f;
+    border-radius: 15px;
+    max-height: calc(100vh - 500px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+#light.accordion-block {
+    border: 2px solid #08ef60;
+    background-color: #0c0c0c;
+    border-radius: 15px;
+    max-height: calc(100vh - 500px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    color: transparent;
+}
+.darklight {
+    width: 40%;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.logoImg {
+    width: 15%;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+.addButton {
+    border: 2px solid black;
+    background-color: transparent;
+    border-color: #2351d2c4;
+    color: #060606;
+    font-size: 18px;
+}
+.addButton:hover {
+    background-color: #518ccfa1;
+    color: rgb(248, 248, 248);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar {
+    width: 1px;
+    color: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #88888885;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.leftToggle:hover {
+    background-color: #50505080;
+    color: rgb(248, 248, 248);
+}
+.tokenShow {
+    padding-right: 5px;
+    .accordion-head {
+        text-align: center;
+        #dark.Name {
+            width: 35%;
+            border: 0.5px solid #ff3333;
+            // border-radius: 30px;
+            background-color: #000000;
+        }
+        #light.Name {
+            width: 35%;
+            border: 0.5px solid #08ef60;
+            // border-radius: 30px;
+            background-color: #000000;
+        }
+        #dark.Price {
+            width: 23%;
+            border: 0.5px solid #ff3333;
+            // border-radius: 30px;
+            background-color: #000000;
+        }
+        #light.Price {
+            width: 23%;
+            border: 0.5px solid #08ef60;
+            // border-radius: 30px;
+            background-color: #000000;
+        }
+        #dark.Holdings {
+            width: 23%;
+            border: 0.5px solid #ff3333;
+            // border-radius: 30px;
+            background-color: #000000;
+        }
+        #light.Holdings {
+            width: 23%;
+            border: 0.5px solid #08ef60;
+            // border-radius: 30px;
+            background-color: #000000;
+        }
+        #dark.Value {
+            width: 19%;
+            border: 0.5px solid #ff3333;
+            // border-radius: 30px;
+            background-color: #000000;
+        }
+        #light.Value {
+            width: 19%;
+            border: 0.5px solid #08ef60;
+            // border-radius: 30px;
+            background-color: #000000;
+        }
+    }
+}
+#dark.showdetail-block {
+    border-radius: 30px;
+    background-image: linear-gradient(180deg, #ff416c, #ff4b2b);
+    padding: 3px;
+}
+.detailbackground {
+    margin-left: 0px;
+    border-radius: 30px;
+    background-color: #000;
+}
+
+#light.showdetail-block {
+    border-radius: 30px;
+    background-image: linear-gradient(180deg, #00fefe, #2dddc6);
+    padding: 3px;
+}
+.detail-token {
+    padding-right: 50px;
+    padding-left: 70px;
+    // padding-bottom: 20px;
+    padding-top: 30px;
+}
+.tokenTitle {
+    font-size: 20px;
+    color: #ee4040;
+    text-align: center;
+    font-weight: bold;
+}
+#dark.wallet-info {
+    border-radius: 30px;
+    background-image: linear-gradient(180deg, #ff416c, #ff4b2b);
+    padding: 3px;
+}
+.wallet-background {
+    width: 100%;
+    margin-left: 0px;
+    border-radius: 10px;
+    background-color: #27262C;
+}
+#light.wallet-info {
+    background-image: linear-gradient(180deg, #00fefe, #2dddc6);
+    border-radius: 30px;
+    padding: 3px;
+}
+.input-group {
+    padding-left: 25%;
+    padding-top: 15px;
+}
+.wallet-box {
+    padding-left: 165px;
+}
+.accordn-button {
+    width: 72%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+// .search-input {
+//     color: #32fbf2;
+// }
+.search-input:focus {
+    color: #32fbf2;
+}
+#dark.btn-outline-secondary {
+    color: #01d2f0;
+    border: 1px solid rgb(255, 250, 250);
+}
+#light.btn-outline-secondary {
+    color: #0c0c0c;
+    border: 1px solid gray;
+}
+.page-show {
+    color: #000;
+    background-color: #f8f8f8;
+    border-color: #141514;
+    border-radius: 15px;
+}
+.tiken-show {
+    border-radius: 15px;
+}
+.input-group-search {
+    width: 40%;
+}
+.btngroup {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.MuiTableCell-root {
+    width: 16%;
+}
+@media screen and (max-width: 768px) {
+    .btn-group-scape {
+        height: 20px;
+        font-size: 10px;
+    }
+    .space-tab {
+        width: 10%;
+    }
+    .Name {
+        width: 24%;
+    }
+    .Price {
+        width: 25%;
+    }
+    .Holdings {
+        width: 25%;
+    }
+    .Value {
+        width: 20%;
+    }
+    .card {
+        .outLine {
+            padding-left: 0px;
+        }
+    }
+    .accordn-button {
+        width: 100%;
+        .col-9 {
+            width: 100%;
+        }
+    }
+    .row {
+        padding-left: 10px;
+    }
+    .wallet-box {
+        padding-left: 10px;
+        padding-right: 0px;
+
+        width: 100%;
+    }
+    // .btn-outline-secondary {
+    //     width: 173px;
+    // }
+    .input-group-append {
+        width: 96%;
+        padding-left: 5px;
+    }
+    .input-group-search {
+        width: 96%;
+        padding-bottom: 10px;
+    }
+    .input-group {
+        padding-left: 0%;
+    }
+    .darklight {
+        margin-left: 5px;
+        width: 65%;
+        display: block;
+        visibility: visible;
+    }
+    .logo {
+        width: 87%;
+    }
+    .changeth {
+        width: 13%;
+    }
+    .logoImg {
+        width: 45%;
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+    .logo-center{
+display:flex;
+justify-content: center;
+padding-top: 5px;
+    }
+    .form-control {
+        font-size: 15px;
+    }
+    .leftsidesearchBar {
+        width: 0%;
+    }
+    .addressList {
+        font-size: 25px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        padding-left: 14px;
+        width: 96%;
+    }
+    .searchBar {
+        width: 65%;
+        padding-top: 5px;
+    }
+    .addBtn {
+        width: 35%;
+    }
+    .addButton {
+        font-size: 12px;
+    }
+    .liquidityList {
+        padding-top: 5px;
+        width: 100%;
+    }
+    .leftTotal {
+        .data-row {
+            padding-left: 10px;
+        }
+        font-size: 10px;
+        padding: 10px;
+        width: 60%;
+        font-weight: unset;
+    }
+    .rightTotal {
+        font-size: 10px;
+        padding: 10px;
+        width: 40%;
+        font-weight: unset;
+    }
+    .chartTotal {
+        width: 100%;
+    }
+    .leftcustomSwitch {
+        width: 60%;
+    }
+    .custom-switch {
+        width: 40%;
+    }
+    .leftToggle {
+        width: 92%;
+        padding-left: 0px;
+    }
+    .leftToggle:hover {
+        background-color: #50505080;
+        color: rgb(248, 248, 248);
+    }
+    #homepage .accordion .favour {
+        padding: 0px;
+        width: 8%;
+    }
+    #homepage .accordion .icon-wrap {
+        width: 20px;
+    }
+    #homepage .accordion .favourite {
+        width: 55%;
+    }
+    .accordion-toggle {
+        font-size: 8px;
+    }
+    .fa-chevron-down {
+        font-size: 10px;
+    }
+    .leftInside {
+        padding: 5px;
+        width: 50%;
+        font-size: 10px;
+    }
+    .rightInside {
+        padding: 5px;
+        width: 50%;
+        font-size: 10px;
+    }
+    .priceofToken {
+        font-size: 15px;
+    }
+    .accordion-block {
+        width: 100%;
+    }
+    .detail-token {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    img {
+        margin-bottom: 0px;
+    }
+    .tokenShow {
+        .col-8 {
+            width: 100%;
+        }
+        width: 107%;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    .tokenTitle {
+        font-size: 18px;
+    }
+}
